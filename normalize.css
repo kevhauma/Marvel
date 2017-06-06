@@ -27,9 +27,7 @@ html {
 body {
   margin: 0;
 }
-.weatherPic{
-    padding-top:0px;
-}
+.
 /**
  * Add the correct display in IE 9-.
  */
@@ -233,7 +231,6 @@ audio:not([controls]) {
 
 img {
   border-style: none;
-    width: 80px;
 }
 
 /**

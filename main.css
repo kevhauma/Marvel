@@ -1,5 +1,6 @@
 body{
     background: #2c3e50;
+    text-align: center;
 }
 
 .comic-list {
@@ -15,6 +16,7 @@ body{
     background: rgba(255, 255, 255, .9);
     padding: 10px 20px;
     margin-bottom: 10px;
+    text-align: left;
 }
  
 .comic-art {
@@ -31,6 +33,7 @@ body{
 .comic-information {
     float: left;
     width: 80%;
+    text-align: left;
 }
 .comic__title {
     clear: both;
@@ -72,6 +75,10 @@ body{
     padding: 10px 0;
     margin: 0;
 }
-.comic__title:hover {
+.character__hint {
+   text-decoration: none;
+   font-size: 0.65em;
+}
+.character__hint:hover {
    text-decoration: underline;
 }

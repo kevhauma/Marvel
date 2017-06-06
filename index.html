@@ -26,7 +26,8 @@
               </select></br>
               <ul class="comic-list">
                 <li ng-repeat="comic in comiclist" class="comic"> 
-                    <span class="comic__title" ng-click="ShowCharacters(comic.id)">{{ comic.title }} : {{comic.id}}</span>
+                    <span class="comic__title" >{{ comic.title }} : {{comic.id}}</span>
+                    <span class="character__hint" ng-click="ShowCharacters(comic.id)">Click to show characters</span>
                     <div class="comic-art">
                         <img class="comic__thumbnail" ng-src="{{comic.thumbnail.path}}.{{comic.thumbnail.extension}}"/>
                     </div>
