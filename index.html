@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>prikbord</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.js"></script>
+    <script src="APIs.js"></script>
+    <link rel="stylesheet" type="text/css" href="normalize.css"></link>    
+    <link rel="stylesheet" type="text/css" href="sakura-earthly.css"></link>
+	
+	
+  </head>
+  <body ng-app="PrikbordApp">   
+    <div ng-controller="MainController" ng-init="GETMessages()">  
+      <div class="weather" ng-init="GETWeather()">
+          <h5>
+             <select ng-model="selectedseries">
+                <option ng-repeat="serie in serieslist" value={{serie.id}}>{{serie.title}} : {{serie.id}}</option>
+              </select>
+              <button ng-click="GetComics()">update</button> </br>
+              <ul>
+                <li ng-repeat="comic in comiclist">
+                    {{comic.title}}
+                    <img ng-src="{{comic.thumbnail.path}}.{{comic.thumbnail.extension}}"/> </br>
+                    {{comic.description}}
+                   <!-- <ul>
+                        <li ng-repeat="comic in comiclist">{{comic.title}} :    {{comic.id}}
+                        <img ng-src="{{comic.thumbnail.path}}.{{comic.thumbnail.extension}}"/>  
+                        </li>
+                    </ul>   -->
+                  </li>
+              </ul>      
+           </h5>
+      </div>
+    </div>
+  </body>
+</html>
