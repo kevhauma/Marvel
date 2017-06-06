@@ -6,30 +6,45 @@
     <script src="APIs.js"></script>
     <link rel="stylesheet" type="text/css" href="normalize.css"></link>    
     <link rel="stylesheet" type="text/css" href="sakura-earthly.css"></link>
+     <link rel="stylesheet" href="main.css">
 	
 	
   </head>
   <body ng-app="PrikbordApp">   
-    <div ng-controller="MainController" ng-init="GETMessages()">  
+    <div ng-controller="MainController" ng-init="GetSeries()">  
       <div class="weather" ng-init="GETWeather()">
-          <h5>
-             <select ng-model="selectedseries">
+              <input ng-model="startswith" type="text" placeholder="startswith"/>
+              <button ng-click="GetSeries()">Get Series</button> </br>
+              <select ng-model="selectedseries">
                 <option ng-repeat="serie in serieslist" value={{serie.id}}>{{serie.title}} : {{serie.id}}</option>
               </select>
-              <button ng-click="GetComics()">update</button> </br>
-              <ul>
-                <li ng-repeat="comic in comiclist">
-                    {{comic.title}}
-                    <img ng-src="{{comic.thumbnail.path}}.{{comic.thumbnail.extension}}"/> </br>
-                    {{comic.description}}
-                   <!-- <ul>
-                        <li ng-repeat="comic in comiclist">{{comic.title}} :    {{comic.id}}
-                        <img ng-src="{{comic.thumbnail.path}}.{{comic.thumbnail.extension}}"/>  
-                        </li>
-                    </ul>   -->
+              <button ng-click="GetComics()">update</button> 
+              <select ng-model="limit">
+                <option>5</option>
+                <option>10</option>
+                <option>15</option>
+              </select></br>
+              <ul class="comic-list">
+                <li ng-repeat="comic in comiclist" id="{{ comic.id }}" class="comic"> 
+                    <span class="comic__title" ng-click="ShowCharacters(comic.id)">{{ comic.title }}</span>
+                    <div class="comic-art">
+                        <img class="comic__thumbnail" ng-src="{{comic.thumbnail.path}}.{{comic.thumbnail.extension}}"/>
+                    </div>
+                    <div class="comic-information">
+                        <p class="comic__description">{{comic.description}}</p>
+                    </div>
+                    <div id="{{comic.id}}">
+                        <ul class="characterlist">
+                            <li ng-repeat="character in characterlist">
+                                <div class="wrapper">
+                                    <img class="char__thumbnail" ng-src="{{character.thumbnail.path}}.{{character.thumbnail.extension}}"/>
+                                    <p class="charactername">{{character.name}}</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
                   </li>
-              </ul>      
-           </h5>
+              </ul>
       </div>
     </div>
   </body>
