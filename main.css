@@ -3,8 +3,9 @@ body{
 }
 .wrapper{
     position: relative;
-    width: 15%;
-    height: 15%;
+    margin-right: 5px;
+    overflow: hidden;        
+    height: 100px;
 }
 .comic-list {
     padding: 20px 0 0 0;
@@ -28,8 +29,7 @@ body{
  
 }
 .characterlist li {
-    display: inline;
-    visibility:visible;
+    display: inline-block;
 }
 
 .comic-information {
@@ -37,7 +37,7 @@ body{
     width: 80%;
 }
 .wrapper img {
-   display: block;
+    width:100px;
 }
 .wrapper .charactername {
    opacity: 0;

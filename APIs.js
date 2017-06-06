@@ -18,10 +18,7 @@ var App = angular.module('PrikbordApp', []);
             $http.get('http://gateway.marvel.com/v1/public/comics/' + comicid + '/characters?ts=1&apikey=580ec40a7f1d18e71b191f04a401d704&hash=4ae65965f96b46fcdf6425f23f5198d7')
             .then(function(response){
             $scope.characterlist = response.data.data.results;
-                })
-            .then(function(){
-                document.getElementById(comicid).style.visibility = visibile;
-            });
+                });
         };
       });
       
