@@ -25,7 +25,7 @@
                 <option>15</option>
               </select></br>
               <ul class="comic-list">
-                <li ng-repeat="comic in comiclist" id="{{ comic.id }}" class="comic"> 
+                <li ng-repeat="comic in comiclist" class="comic"> 
                     <span class="comic__title" ng-click="ShowCharacters(comic.id)">{{ comic.title }}</span>
                     <div class="comic-art">
                         <img class="comic__thumbnail" ng-src="{{comic.thumbnail.path}}.{{comic.thumbnail.extension}}"/>
@@ -35,11 +35,8 @@
                     </div>
                     <div id="{{comic.id}}">
                         <ul class="characterlist">
-                            <li ng-repeat="character in characterlist">
-                                <div class="wrapper">
-                                    <img class="char__thumbnail" ng-src="{{character.thumbnail.path}}.{{character.thumbnail.extension}}"/>
-                                    <p class="charactername">{{character.name}}</p>
-                                </div>
+                            <li ng-repeat="character in comic.characters.items">    
+                                <span>{{character.name}}</span>
                             </li>
                         </ul>
                     </div>
